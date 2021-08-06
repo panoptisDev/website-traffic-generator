@@ -18,12 +18,12 @@ visitorRef.once('value')
     const array = snapshot?.val();
     console.log(array)
     let currentVisited = array[array.length-1].visited;
-  //  const geo = geoip.lookup(req.ip);
+   let geo = geoip.lookup(req.ip); 
     let data = {
         visited: ++currentVisited,
-        headers: JSON.stringify(req.headers),
+        headers: JSON.stringify(req.headers), 
         ip: JSON.stringify(req.ip),
-       lookup: geo,
+       lookup: geo || "null",
         browser: req.headers["user-agent"] || "NA"
     }
     database.ref(`visitor/${++currentVisited}`).set(data,(errors)=>{

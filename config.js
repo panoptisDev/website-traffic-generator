@@ -1,6 +1,8 @@
 const config = {
-    PROXY: 10,
-    AGENTS:10
+    PROXY: 1000,
+    AGENTS:10,
+    visitors:10,
+    url:"http://localhost:3000"
 }
 
 module.exports=config;
